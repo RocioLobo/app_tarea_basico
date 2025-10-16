@@ -1,34 +1,33 @@
 function mostrarMensaje(){
-    console.log("holaa como estas")
+    console.log("mensaje")
 }
+
 function agregarTarea(){
-    // capturamos el elemento input
-    let input=document.querySelector
-    ("#nuevaTarea")
-    if(input.value==""){
+    // Capturamos el elemento input
+    let input=document.querySelector("#nuevaTarea")
+    if (input.value==""){
         alert("el input debe contener un texto")
-    return
+        return
     }
-    //capturamos el valor de input
+    //Capturamos el valor de input
     let valorInput=input.value
-    // capturamos el elemento ul
-    let ul=document.querySelector
-    ("#listaTareas")
-    // creamos un elemento li
+    //capturamos el elemento ul
+    let ul=document.querySelector("#listaTareas")
+    //Creamos el elemento li
     let li=document.createElement("li")
-    // le asignamos como contenido del li el valor capurado de input
+    // Le asignamos como contenido del li, el valor capturado de input
     li.textContent=valorInput
-    // creamos el boton eliminar
+    //Creamos el botón eliminar
     let button=document.createElement("button")
     button.textContent="Eliminar"
     button.onclick=function(){li.remove()}
     li.appendChild(button)
-    
-    // le agregamos como hijo el li al elemento padre ul.
+    //Le agregamos como hijo el li al elemento padre ul.
     ul.appendChild(li)
-    // le agregamos como hijo el li al elemento padre ul.
-    document.querySelector("#nuevaTarea"). value=""
-    // Esta linea hacer focus en el input,lo mantienen activo listo para poderingresar cualquier otro texto.
-    input.focus()
+    console.log()
 
+    //Esta línea de código limpia mi input
+    document.querySelector("#nuevaTarea").value=""
+    //Esta línea hace focus en el input, lo mantiene activo y listo para poder ingresar cualquier otro texto.
+    input.focus()
 }
